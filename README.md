@@ -23,9 +23,5 @@ Ce projet démontre l'implémentation d'un système d'authentification en utilis
 
 1. Clonez le dépôt :
    ```bash
-<<<<<<< HEAD
    git clone https://github.com/mariusdjen/express-authentication-ejs.git
-=======
-   git clone https://github.com/mariusdjen/express-auth-prisma-mysql.git
->>>>>>> 3d94326380f583ab8e12a01e407511807434a721
 
