@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+.main{
+    margin: 100px 0px;
+}
