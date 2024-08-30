@@ -1,7 +1,10 @@
 import express from "express";
+import bodyParser from 'body-parser';
+
 //Import routes files
 import homeRouter from "./routes/home.route.js";
 import registerRouter from "./routes/register.route.js";
+
 
 // Créer une instance de l'application Express
 const app = express();
@@ -13,6 +16,9 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 // Pointer le dossier static public
 app.use(express.static("public"));
+// Middleware pour analyser les champs texte du formulaire
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 //endConfig
 
