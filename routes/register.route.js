@@ -1,16 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
+import session from 'express-session';
+import { registerIndex,registerUser } from "../controllers/registrationController.js";
 
 const router = express.Router();
 
-router.get('/register',(req,res)=>{
-    res.render('register');
-})
-router.post('/register',(req,res)=>{
-
-
-    console.log(req.body);
-    
-    res.render('register');
-})
+router.get('/register',registerIndex);
+router.post('/register',registerUser);
 export default router;

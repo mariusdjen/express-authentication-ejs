@@ -9,37 +9,59 @@
 </head>
 
 <body>
-    <%- include('../partials/header') %> 
-  
-   <section>
-    <div class="main">
-        <div class="container">
-            <h2>Inscription</h2>
-            <form action="/resgister" method="post">
-                <div class="input-group">
-                    <label for="nom">Nom:</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Mot de passe:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="input-group">
-                    <label for="confirm-password">Confirmer le mot de passe:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                </div>
-                <button type="submit" class="btn">S'inscrire</button>
-            </form>
-        </div>
-    </div>
-   </section>
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/header') %>
 
-   
+        <section>
+
+            <!-- Afficher les messages de succès -->
+            <% if (successMessage) { %>
+                <div class="alert alert-success">
+                    <%= successMessage %>
+                </div>
+                <% } %>
+
+                    <!-- Afficher les messages d'erreur -->
+                    <% if (errorMessages && errorMessages.length> 0) { %>
+                        <div class="alert alert-danger">
+                            <ul>
+                                <% errorMessages.forEach(function(error) { %>
+                                    <li>
+                                        <%= error %>
+                                    </li>
+                                    <% }); %>
+                            </ul>
+                        </div>
+                        <% } %>
+                            <%# Managing flash messages manually %>
+
+                                <div class="main">
+                                    <div class="container">
+                                        <h2>Inscription</h2>
+                                        <form action="/register" method="post">
+                                            <div class="input-group">
+                                                <label for="nom">Nom:</label>
+                                                <input type="text" id="nom" name="nom">
+                                            </div>
+                                            <div class="input-group">
+                                                <label for="email">Email:</label>
+                                                <input type="email" id="email" name="email">
+                                            </div>
+                                            <div class="input-group">
+                                                <label for="password">Mot de passe:</label>
+                                                <input type="password" id="password" name="password">
+                                            </div>
+                                            <div class="input-group">
+                                                <label for="confirm-password">Confirmer le mot de passe:</label>
+                                                <input type="password" id="confirm-password" name="confirm-password">
+                                            </div>
+                                            <button type="submit" class="btn">S'inscrire</button>
+                                        </form>
+                                    </div>
+                                </div>
+        </section>
+        <%- include('../partials/footer') %>
+
+
 </body>
 
 </html>
